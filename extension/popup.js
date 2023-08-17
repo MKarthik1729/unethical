@@ -1,12 +1,4 @@
-document.getElementById('coding').addEventListener('click', function () {
-    chrome.tabs.create({ url: 'coding.html' });
-  });
-  
-  document.getElementById('aptitude').addEventListener('click', function () {
-    chrome.tabs.create({ url: 'aptitude.html' });
-  });
-  
-  document.getElementById('verbal').addEventListener('click', function () {
-    chrome.tabs.create({ url: 'verbal.html' });
-  });
-  
+document.getElementById("update-button").addEventListener("click", function () {
+  var newMessage = "Updated message";
+  document.getElementById("message").textContent = newMessage;
+});
