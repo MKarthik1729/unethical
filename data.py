@@ -1,12 +1,10 @@
 from pymongo import MongoClient
 import json
 from bson import ObjectId  # Import the ObjectId type
-
+from mongoConnection import db
     # Connect to MongoDB
-def collect_data():
-    client = MongoClient("mongodb+srv://karthikm20:12345677@cluster0.qrb6qry.mongodb.net/?retryWrites=true&w=majority")
-    db = client.answers
-    collection = db.coding
+def collect_data(k):
+    collection = db[k]
 
     # Retrieve documents from the collection
     documents = collection.find()
