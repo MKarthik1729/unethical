@@ -7,16 +7,13 @@ CORS(app)
 @app.route("/data", methods=["GET"])
 def get_example():
     k = data.collect_data(request.args.get('ele'))
-    # data = {"message": "This is a GET request example"}
-    # ele = request.args.get('ele') 
-    # print(ele)
     return jsonify(k)
 
-@app.route('/add_data', methods=['POST'])
-def add_data():
+@app.route('/add_data/<string:data>', methods=['POST'])
+def add_data(data):
     try:
-        data = request.json  # Assuming JSON data in the POST request body
-        upload(data)
+        findata = request.json  # Assuming JSON data in the POST request body
+        upload(findata,type=data)
         # print(data)
         return jsonify({"message": "Data added successfully"})
     except Exception as e:

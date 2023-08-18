@@ -1,13 +1,13 @@
 from mongoConnection import db
-collection = db.aptitude  # Replace with your collection name
-def upload(data):
+def upload(data,type='verbal'):
+    collection = db[type]  # Replace with your collection name
     collection.insert_one(data)
-    # print("Document inserted with ID:", inserted_document.inserted_id)
+    print("inserted to "+type)
     return True
 
 
 if __name__ == "__main__":
     upload({
-        "question":"vkdsv nkvj25",
-        "answer":"3lkwrgjk"
+        "question":"bottle",
+        "answer":"water"
     })

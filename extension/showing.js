@@ -1,18 +1,8 @@
-{/* <script> */}
-// Sample JSON data
+
 var showing = 0
-
-function removedata(){
-    document.getElementById("code").innerHTML =''
-    document.getElementById("verbal").innerHTML =''
-    document.getElementById("aptitude").innerHTML =''
-}
-
+var host_url = 'https://support-hfec.onrender.com/'
 code = document.getElementById("code-show")
 function getdata(route,code){
-    // document.getElementById("code").innerHTML =''
-    // document.getElementById("verbal").innerHTML =''
-    // document.getElementById("aptitude").innerHTML =''
     code.innerHTML = '';
     fetch(route)
         .then(response => response.json())
@@ -34,15 +24,15 @@ function getdata(route,code){
 }
 
 document.getElementById("code").addEventListener("click",function () {
-    getdata("http://127.0.0.1:5000/data?ele=coding",code)
+    getdata(host_url+"data?ele=coding",code)
 })
 
 document.getElementById("verbal").addEventListener("click",function () {
-    getdata("http://127.0.0.1:5000/data?ele=verbal",code)
+    getdata(host_url+"data?ele=verbal",code)
 })
 
 document.getElementById("aptitude").addEventListener("click",function () {
-    getdata("http://127.0.0.1:5000/data?ele=aptitude",code)
+    getdata(host_url+"data?ele=aptitude",code)
 })
 
 //     code.innerHTML = '';
